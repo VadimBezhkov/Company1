@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Company
 {
-    class Company
+    class Company <T> where class
     {
     }
 }

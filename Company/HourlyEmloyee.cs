@@ -8,6 +8,7 @@ namespace Company
 {
    abstract class HourlyEmloyee
     {
-       abstract public decimal RecievePayment(decimal salary, int hour);
+        public int HoursPerMonth { get; set; }
+        abstract public decimal RecievePayment(decimal salary, int hour);
     }
 }
