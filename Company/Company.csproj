@@ -44,16 +44,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Company.cs" />
-    <Compile Include="Employee.cs" />
-    <Compile Include="Executive.cs" />
-    <Compile Include="HourlyEmloyee.cs" />
-    <Compile Include="Manager.cs" />
+    <Compile Include="BaseClass\Employee.cs" />
+    <Compile Include="CompanyBase.cs" />
+    <Compile Include="DerivedClass\Executive.cs" />
+    <Compile Include="DerivedClass\HourlyEmloyee.cs" />
+    <Compile Include="DerivedClass\Manager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SalariedEmployee.cs" />
+    <Compile Include="DerivedClass\SalariedEmployee.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
