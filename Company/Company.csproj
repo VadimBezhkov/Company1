@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="Company.cs" />
     <Compile Include="BaseClass\Employee.cs" />
-    <Compile Include="CompanyBase.cs" />
     <Compile Include="DerivedClass\Executive.cs" />
     <Compile Include="DerivedClass\HourlyEmloyee.cs" />
     <Compile Include="DerivedClass\Manager.cs" />
