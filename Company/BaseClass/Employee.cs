@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace Company
 {
+    enum Position
+    {
+
+
+    }
+
     abstract class Employee
     {
         public int Id { get; set; }
