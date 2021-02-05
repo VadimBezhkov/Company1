@@ -8,8 +8,15 @@ namespace Company
 {
     enum Position
     {
-
-
+        Executive = 1,
+        Manager,
+        HourlyEmloyee,
+        SalariedEmployee
+    }
+    enum Gender
+    {
+        man =1,
+        woman
     }
 
     abstract class Employee
@@ -18,19 +25,17 @@ namespace Company
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public decimal Salary { get; set; }
-        public int NumberOfHours { get; set; }
-        public int WorkingHoursPerMonth { get; set; }
-        public  decimal PaymentOfTheMoney { get; set; }
-        public Employee(int id, string lastname, string firstname)
+        public int Gender { get; set; }
+        public int Position { get; set; }
+
+
+        public Employee(int id, string lastname, string firstname,Gender gender,Position op)
         {
             Id = id;
             LastName = lastname;
             FirstName = firstname;
+            Gender = (int)gender;
+            Position = (int)op;
         }
-        public Employee(int id, string lastname, string firstname, int hour) :this (id,lastname,firstname)
-        { 
-            NumberOfHours = hour;
-        }
-        public abstract decimal CalculationOfMmoney();
     }
 }

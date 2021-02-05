@@ -21,28 +21,28 @@ namespace Company
             Employees.Remove(emp);
         }
 
-        public void ToRaise(Employee emp , Posit positRaise, double raiseAmmount)
-        {
-            bool isFound = false;
+        //public void ToRaise(Employee emp , Position positRaise, double raiseAmmount)
+        //{
+        //    bool isFound = false;
 
-            if ((int)emp.Posit < positRaise)
-            {
-                emp.Posit = positRaise;
+        //    if ((int)emp.Position < positRaise)
+        //    {
+        //        emp.Posit = positRaise;
 
-                if(emp.Salary < SalaryDictionaty.ExecMinSal)
-                    emp.Salary = SalaryDictionaty.ExecMinSal + Bonus
-            }
+        //        if(emp.Salary < SalaryDictionaty.ExecMinSal)
+        //            emp.Salary = SalaryDictionaty.ExecMinSal + Bonus
+        //    }
 
 
-            if(!isFound)
-                Console.WriteLine("Employee is not in company.");
-        }
-        public void Show()
-        {
-            foreach (var emp in Employees)
-            {
-                Console.WriteLine($"ID: {emp.Id} First Name{emp.FirstName} Last Name {emp.LastName}");
-            }
-        }
+        //    if(!isFound)
+        //        Console.WriteLine("Employee is not in company.");
+        //}
+        //public void Show()
+        //{
+        //    foreach (var emp in Employees)
+        //    {
+        //        Console.WriteLine($"ID: {emp.Id} First Name{emp.FirstName} Last Name {emp.LastName}");
+        //    }
+        //}
     }
 }

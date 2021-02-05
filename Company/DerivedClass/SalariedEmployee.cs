@@ -8,19 +8,15 @@ namespace Company
 {
     class SalariedEmployee:Employee
     {
-        public new decimal Salary { get; set; } = 156000m;
-        public SalariedEmployee(int id, string lastname, string firstname, int hour) : base(id, lastname, firstname, hour)
+        public new decimal Salary { get; set; } 
+
+        public SalariedEmployee(int id, string lastname, string firstname, Gender gender, Position op) : base(id, lastname, firstname,gender,op)
         {
 
         }
-        public SalariedEmployee(int id, string lastname, string firstname) : base(id, lastname, firstname)
+        public  decimal CalculationOfMmoney()
         {
-
-        }
-        public override decimal CalculationOfMmoney()
-        {
-            PaymentOfTheMoney = (Salary / WorkingHoursPerMonth) * NumberOfHours;
-            return PaymentOfTheMoney;
+            return Salary;
         }
     }
 }

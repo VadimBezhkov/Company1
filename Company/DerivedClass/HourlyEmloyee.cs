@@ -8,19 +8,17 @@ namespace Company
 {
     class HourlyEmloyee :Employee
     {
-        public new decimal Salary { get; set; } = 1560;
-        public HourlyEmloyee(int id, string lastname, string firstname) : base(id, lastname, firstname)
+        public new decimal Salary { get; set; } 
+        public int NumberOfHours { get; set; }
+        public HourlyEmloyee(int id, string lastname, string firstname, Gender gender, Position op) : base(id, lastname, firstname,gender,op)
         {
 
         }
-        public HourlyEmloyee(int id, string lastname, string firstname, int hour) : base (id, lastname, firstname, hour)
-        {
 
-        }
-        public override decimal CalculationOfMmoney()
+        public  decimal CalculationOfMmoney(decimal salary,int hour)
         {
-            PaymentOfTheMoney = Salary * NumberOfHours;
-            return PaymentOfTheMoney;
+            Salary = salary * hour;
+            return Salary;
         }
     }
 }

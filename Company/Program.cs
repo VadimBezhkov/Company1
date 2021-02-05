@@ -11,9 +11,8 @@ namespace Company
     {
         static void Main(string[] args)
         {
-            string str = "Manager";
-
-            var emp = (Employee)Activator.CreateInstance(Assembly.GetExecutingAssembly().FullName, str).Unwrap();
+            Executive ex = new Executive(20, "", "", Gender.man, Position.Manager);
+            Console.WriteLine((Position)ex.Position);
             Console.ReadKey();
         }
     }
