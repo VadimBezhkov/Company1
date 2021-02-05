@@ -64,13 +64,37 @@ namespace Company
                             Console.WriteLine("Enter Id");
                             int id;
                             bool result= int.TryParse(Console.ReadLine(), out id);
+
                             Console.WriteLine("Enter Last Name");
                             string lastName = Console.ReadLine();
+
                             Console.WriteLine("Enter First Name");
                             string firstName = Console.ReadLine();
+
                             Console.WriteLine("Enter Gander");
+                            string gender = Console.ReadLine();
 
+                            if(gender=="man")
+                            {
+                                return Gender.man;
+                            }
+                            else if (gender == "woman")
+                            {
+                                Gender gender1 = Gender.woman;
+                            }
+                            else
+                                Console.WriteLine("Erorrs enter man and woman");
 
+                            Console.WriteLine("Enter Position");
+                            string position = Console.ReadLine();
+
+                            if(position == "Executive")
+                            {
+                                Console.WriteLine("Enter name Executive");
+                                string executive = Console.ReadLine();
+                                Executive executive1 = new Executive(id, lastName, firstName, Gender.man, Position.Executive);
+
+                            }
                         }
                         break;
                     case Operation.FireAnEmployee:
