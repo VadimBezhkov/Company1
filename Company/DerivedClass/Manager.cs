@@ -10,7 +10,8 @@ namespace Company
     {
         public new decimal Salary { get; set; }
 
-        public Manager(int id, string lastname, string firstname, Gender gender, Position op) : base(id, lastname, firstname,gender,op)
+        public Manager(int id, string lastname, string firstname, Gender gender, Position op) 
+            : base(id, lastname, firstname,gender,op)
         {
 
         }

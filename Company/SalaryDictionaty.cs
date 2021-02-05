@@ -8,7 +8,8 @@ namespace Company
 {
     static class SalaryDictionaty
     {
-        public static int ExecMinSal = 120;
-        public static int HourMinSal = 10;
+        public static decimal ExecMinSal = 120m;
+        public static decimal HourMinSal = 10m;
+        public static decimal Bonus;
     }
 }

@@ -21,28 +21,46 @@ namespace Company
             Employees.Remove(emp);
         }
 
-        //public void ToRaise(Employee emp , Position positRaise, double raiseAmmount)
-        //{
-        //    bool isFound = false;
+        public void PromoteAnEmployee(Employee emp, Position positRaise, double raiseAmmount)
+        {
+            bool isFound = false;
 
-        //    if ((int)emp.Position < positRaise)
-        //    {
-        //        emp.Posit = positRaise;
+            if (emp.Position<4&&emp.Position>1)
+            {
+                emp.Position --;
 
-        //        if(emp.Salary < SalaryDictionaty.ExecMinSal)
-        //            emp.Salary = SalaryDictionaty.ExecMinSal + Bonus
-        //    }
+                if (emp.Salary < SalaryDictionaty.ExecMinSal)
+                    emp.Salary = SalaryDictionaty.ExecMinSal + SalaryDictionaty.Bonus;
+            }
 
 
-        //    if(!isFound)
-        //        Console.WriteLine("Employee is not in company.");
-        //}
-        //public void Show()
-        //{
-        //    foreach (var emp in Employees)
-        //    {
-        //        Console.WriteLine($"ID: {emp.Id} First Name{emp.FirstName} Last Name {emp.LastName}");
-        //    }
-        //}
+            if (!isFound)
+                Console.WriteLine("Employee is not in company.");
+        }
+
+        public void DemoteEmployee(Employee emp, Position positRaise, double raiseAmmount)
+        {
+            bool isFound = false;
+
+            if (emp.Position < 4 && emp.Position > 1)
+            {
+                emp.Position++;
+
+                if (emp.Salary < SalaryDictionaty.ExecMinSal)
+                    emp.Salary = SalaryDictionaty.ExecMinSal - SalaryDictionaty.Bonus;
+            }
+
+
+            if (!isFound)
+                Console.WriteLine("Employee is not in company.");
+        }
+        public void Show()
+        {
+            foreach (var emp in Employees)
+            {
+                Console.WriteLine($"ID: {emp.Id} First Name{emp.FirstName} Last Name {emp.LastName} " +
+                    $"Gender {(Gender)emp.Gender} Position {(Position)emp.Position}");
+            }
+}
     }
 }
