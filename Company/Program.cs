@@ -52,11 +52,40 @@ namespace Company
 
             company.Show();
             Console.WriteLine();
-            Menu();
-            Operation op;
-            Enum.TryParse(Console.ReadLine(), out op);
+            while (true)
+            {
+                Menu();
+                Operation op;
+                Enum.TryParse(Console.ReadLine(), out op);
+                switch (op)
+                {
+                    case Operation.HireAnemployee:
+                        {
+                            Console.WriteLine("Enter Id");
+                            int id;
+                            bool result= int.TryParse(Console.ReadLine(), out id);
+                            Console.WriteLine("Enter Last Name");
+                            string lastName = Console.ReadLine();
+                            Console.WriteLine("Enter First Name");
+                            string firstName = Console.ReadLine();
+                            Console.WriteLine("Enter Gander");
 
 
+                        }
+                        break;
+                    case Operation.FireAnEmployee:
+                        break;
+                    case Operation.ToPromote:
+                        break;
+                    case Operation.Demote:
+                        break;
+                    case Operation.Show:
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            }
             Console.ReadKey();
         }
     }
