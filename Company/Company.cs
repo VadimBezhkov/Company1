@@ -21,11 +21,12 @@ namespace Company
             Employees.Remove(emp);
         }
 
-        public void PromoteAnEmployee(Employee emp, Position positRaise, double raiseAmmount)
+        public void PromoteAnEmployee(Employee emp, decimal bonus)
         {
-            bool isFound = false;
+            SalaryDictionaty.Bonus = bonus;
 
             if (emp.Position<4&&emp.Position>1)
+
             {
                 emp.Position --;
 
@@ -34,15 +35,13 @@ namespace Company
             }
 
 
-            if (!isFound)
                 Console.WriteLine("Employee is not in company.");
         }
 
-        public void DemoteEmployee(Employee emp, Position positRaise, double raiseAmmount)
+        public void DemoteEmployee(Employee emp)
         {
-            bool isFound = false;
+            if (emp.Position < 4 && emp.Position >= 1)
 
-            if (emp.Position < 4 && emp.Position > 1)
             {
                 emp.Position++;
 
@@ -50,9 +49,6 @@ namespace Company
                     emp.Salary = SalaryDictionaty.ExecMinSal - SalaryDictionaty.Bonus;
             }
 
-
-            if (!isFound)
-                Console.WriteLine("Employee is not in company.");
         }
         public void Show()
         {

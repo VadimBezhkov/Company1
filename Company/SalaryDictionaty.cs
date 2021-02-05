@@ -10,6 +10,6 @@ namespace Company
     {
         public static decimal ExecMinSal = 120m;
         public static decimal HourMinSal = 10m;
-        public static decimal Bonus;
+        public static decimal Bonus = 200m;
     }
 }

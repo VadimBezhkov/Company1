@@ -8,15 +8,16 @@ namespace Company
 {
     class SalariedEmployee:Employee
     {
-        public new decimal Salary { get; set; } 
-
+        public new decimal Salary { get; set; } = 1000m;
+        public decimal Travel { get; set; } = 50m;
         public SalariedEmployee(int id, string lastname, string firstname, Gender gender, Position op) 
             : base(id, lastname, firstname,gender,op)
         {
 
         }
-        public  decimal CalculationOfMmoney()
+        public override decimal CalculationOfMmoney()
         {
+            SalaryDictionaty.ExecMinSal = Salary+Travel;
             return Salary;
         }
     }

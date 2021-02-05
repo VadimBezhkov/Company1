@@ -37,5 +37,10 @@ namespace Company
             Gender = (int)gender;
             Position = (int)op;
         }
+        public virtual decimal CalculationOfMmoney()
+        {
+            SalaryDictionaty.ExecMinSal = Salary;
+            return Salary;
+        }
     }
 }
