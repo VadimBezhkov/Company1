@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Company
 {
-    class SolariesEmployee<T>:Employee<T>
+    public class SalariedEmployee<T>:Employee<T>
     {
-        public SolariesEmployee(T id, string lastname, string firstname, int hour) : base(id, lastname, firstname, hour)
+        public SalariedEmployee(T id, string lastname, string firstname, int hour) : base(id, lastname, firstname, hour)
         {
 
         }
-        public SolariesEmployee(T id, string lastname, string firstname) : base(id, lastname, firstname)
+        public SalariedEmployee(T id, string lastname, string firstname) : base(id, lastname, firstname)
         {
 
         }
