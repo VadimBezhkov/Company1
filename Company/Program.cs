@@ -73,18 +73,24 @@ namespace Company
 
                             Console.WriteLine("Enter Gander");
                             string gender = Console.ReadLine();
-
-                            if(gender=="man")
+                            Gender Method(string gend)
                             {
-                                return Gender.man;
+                                if (gender == "man")
+                                    return Gender.man;
+                                else
+                                    return Gender.woman;
                             }
-                            else if (gender == "woman")
-                            {
-                                Gender gender1 = Gender.woman;
-                            }
-                            else
-                                Console.WriteLine("Erorrs enter man and woman");
-
+                            //if(gender=="man")
+                            //{
+                            //    return Gender.man;
+                            //}
+                            //else if (gender == "woman")
+                            //{
+                            //    Gender gender1 = Gender.woman;
+                            //}
+                            //else
+                            //Console.WriteLine("Erorrs enter man and woman");
+                            Method(gender);
                             Console.WriteLine("Enter Position");
                             string position = Console.ReadLine();
 
@@ -92,7 +98,7 @@ namespace Company
                             {
                                 Console.WriteLine("Enter name Executive");
                                 string executive = Console.ReadLine();
-                                Executive executive1 = new Executive(id, lastName, firstName, Gender.man, Position.Executive);
+                                Executive executive1 = new Executive(id, lastName, firstName, Method(gender), Position.Executive);
 
                             }
                         }
