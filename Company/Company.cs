@@ -55,32 +55,65 @@ namespace Company
             }
         }
 
-        public void PromoteAnEmployee(Employee emp, decimal bonus)
+        public void PromoteAnEmployee(decimal bonus)
         {
-            SalaryDictionaty.Bonus = bonus;
-
-            if (emp.Position<4&&emp.Position>1)
-
+            SalaryDictionary.Bonus = bonus;
+            Console.WriteLine("Enter First Name");
+            string result = Console.ReadLine();
+            Employee empl = null;
+            foreach (var item in Employees)
             {
-                emp.Position --;
+                if (item.FirstName == result)
+                    empl = item;
+                {
+                    if (empl!=null)
+                    {
+                        if (empl.Position <= 4 && empl.Position > 1)
 
-                if (emp.Salary < SalaryDictionaty.ExecMinSal)
-                    emp.Salary = SalaryDictionaty.ExecMinSal + SalaryDictionaty.Bonus;
+                        {
+                            empl.Position--;
+
+                            if (empl.Salary < SalaryDictionary.ExecMinSal)
+                                empl.Salary = SalaryDictionary.ExecMinSal + SalaryDictionary.Bonus;
+                            Console.Clear();
+                            Show();
+                            break;
+                        }
+                    }
+                    else
+                        Console.WriteLine("Employee not found");
+                }
             }
-
-
-                Console.WriteLine("Employee is not in company.");
         }
 
-        public void DemoteEmployee(Employee emp)
+        public void DemoteEmployee(decimal bonus)
         {
-            if (emp.Position < 4 && emp.Position >= 1)
-
+            SalaryDictionary.Bonus = bonus;
+            Console.WriteLine("Enter First Name");
+            string result = Console.ReadLine();
+            Employee empl = null;
+            foreach (var item in Employees)
             {
-                emp.Position++;
+                if (item.FirstName == result)
+                    empl = item;
+                {
+                    if (empl != null)
+                    {
+                        if (empl.Position < 4 && empl.Position >= 1)
 
-                if (emp.Salary < SalaryDictionaty.ExecMinSal)
-                    emp.Salary = SalaryDictionaty.ExecMinSal - SalaryDictionaty.Bonus;
+                        {
+                            empl.Position++;
+
+                            if (empl.Salary < SalaryDictionary.ExecMinSal)
+                                empl.Salary = SalaryDictionary.ExecMinSal + SalaryDictionary.Bonus;
+                            Console.Clear();
+                            Show();
+                            break;
+                        }
+                    }
+                    else
+                        Console.WriteLine("Employee not found");
+                }
             }
 
         }

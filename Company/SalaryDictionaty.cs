@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Company
 {
-    static class SalaryDictionaty
+    static class SalaryDictionary
     {
         public static decimal ExecMinSal = 120m;
         public static decimal HourMinSal = 10m;

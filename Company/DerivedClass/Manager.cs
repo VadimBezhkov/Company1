@@ -18,7 +18,7 @@ namespace Company
         }
         public override decimal CalculationOfMmoney()
         {
-            SalaryDictionaty.ExecMinSal = Salary-Deductions;
+            SalaryDictionary.ExecMinSal = Salary-Deductions;
             return Salary;
         }
     }

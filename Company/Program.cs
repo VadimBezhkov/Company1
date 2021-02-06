@@ -56,8 +56,8 @@ namespace Company
             company.AddEmploee(nm);
             company.AddEmploee(se);
             company.AddEmploee(es);
+
             company.Show();
-            company.DemoteEmployee(ex);
             return company;
         }
         static void Chose()
@@ -152,12 +152,25 @@ namespace Company
                         {
                             Company employes = MyCollection();
                             employes.DeleteEmployee();
-                            
                         }
                         break;
                     case Operation.ToPromote:
+                        {
+                            Company employes = MyCollection();
+                            Console.WriteLine("Enter Bonus");
+                            decimal result;
+                            decimal.TryParse(Console.ReadLine(), out result);
+                            employes.PromoteAnEmployee(result);
+                        }
                         break;
                     case Operation.Demote:
+                        {
+                            Company employes = MyCollection();
+                            Console.WriteLine("Enter Bonus");
+                            decimal result;
+                            decimal.TryParse(Console.ReadLine(), out result);
+                            employes.DemoteEmployee(result);
+                        }
                         break;
                     default:
                         {

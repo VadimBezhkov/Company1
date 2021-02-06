@@ -40,7 +40,7 @@ namespace Company
         }
         public virtual decimal CalculationOfMmoney()
         {
-            SalaryDictionaty.ExecMinSal = Salary;
+            SalaryDictionary.ExecMinSal = Salary;
             return Salary;
         }
     }

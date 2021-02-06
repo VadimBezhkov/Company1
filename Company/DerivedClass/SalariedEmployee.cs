@@ -17,7 +17,7 @@ namespace Company
         }
         public override decimal CalculationOfMmoney()
         {
-            SalaryDictionaty.ExecMinSal = Salary+Travel;
+            SalaryDictionary.ExecMinSal = Salary+Travel;
             return Salary;
         }
     }
