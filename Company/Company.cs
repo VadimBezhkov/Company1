@@ -21,6 +21,7 @@ namespace Company
             Console.WriteLine("Enter First Name");
             string name = Console.ReadLine();
             Employee employee = null;
+
             foreach (var empl in Employees)
             {
 
@@ -35,6 +36,7 @@ namespace Company
                     Console.WriteLine("Thinking well ? - Enter key y");
                     Console.ResetColor();
                     string result = Console.ReadLine();
+
                     if (result == "y")
                     {
                         Employees.Remove(empl);
@@ -42,8 +44,6 @@ namespace Company
                         Show();
                         break;
                     }
-                    else
-                        break;
                 }
 
                 else
@@ -61,6 +61,7 @@ namespace Company
             Console.WriteLine("Enter First Name");
             string result = Console.ReadLine();
             Employee empl = null;
+
             foreach (var item in Employees)
             {
                 if (item.FirstName == result)
@@ -92,6 +93,7 @@ namespace Company
             Console.WriteLine("Enter First Name");
             string result = Console.ReadLine();
             Employee empl = null;
+
             foreach (var item in Employees)
             {
                 if (item.FirstName == result)

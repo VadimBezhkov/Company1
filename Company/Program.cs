@@ -26,7 +26,6 @@ namespace Company
             Console.WriteLine("To Promote - enter 3");
             Console.WriteLine("Demote - enter key 4");
             Console.ResetColor();
-
         }
         static void MenuPosition()
         {
@@ -76,11 +75,13 @@ namespace Company
 
             Console.WriteLine("Enter Gander - enter key man ant any key woman");
             string gender = Console.ReadLine();
-            GenderInfo(gender);
 
+            GenderInfo(gender);
             MenuPosition();
+
             Position pos;
             Enum.TryParse(Console.ReadLine(), out pos);
+
             switch (pos)
             {
                 case Position.Executive:
@@ -136,9 +137,11 @@ namespace Company
         static void Main(string[] args)
         {
             MyCollection();
+
             while (true)
             {
                 Menu();
+
                 Operation op;
                 Enum.TryParse(Console.ReadLine(), out op);
                 switch (op)
@@ -147,12 +150,14 @@ namespace Company
                         {
                             Chose();
                         }
+
                         break;
                     case Operation.FireAnEmployee:
                         {
                             Company employes = MyCollection();
                             employes.DeleteEmployee();
                         }
+
                         break;
                     case Operation.ToPromote:
                         {
@@ -162,6 +167,7 @@ namespace Company
                             decimal.TryParse(Console.ReadLine(), out result);
                             employes.PromoteAnEmployee(result);
                         }
+
                         break;
                     case Operation.Demote:
                         {
@@ -171,6 +177,7 @@ namespace Company
                             decimal.TryParse(Console.ReadLine(), out result);
                             employes.DemoteEmployee(result);
                         }
+
                         break;
                     default:
                         {
