@@ -136,7 +136,7 @@ namespace Company
         }
         static void Main(string[] args)
         {
-            MyCollection();
+            Company companyName =MyCollection();
 
             while (true)
             {
@@ -154,14 +154,14 @@ namespace Company
                         break;
                     case Operation.FireAnEmployee:
                         {
-                            Company employes = MyCollection();
+                            Company employes = companyName;
                             employes.DeleteEmployee();
                         }
 
                         break;
                     case Operation.ToPromote:
                         {
-                            Company employes = MyCollection();
+                            Company employes = companyName;
                             Console.WriteLine("Enter Bonus");
                             decimal result;
                             decimal.TryParse(Console.ReadLine(), out result);
@@ -171,7 +171,7 @@ namespace Company
                         break;
                     case Operation.Demote:
                         {
-                            Company employes = MyCollection();
+                            Company employes = companyName;
                             Console.WriteLine("Enter Bonus");
                             decimal result;
                             decimal.TryParse(Console.ReadLine(), out result);
