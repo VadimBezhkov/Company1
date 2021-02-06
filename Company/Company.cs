@@ -54,8 +54,8 @@ namespace Company
         {
             foreach (var emp in Employees)
             {
-                Console.WriteLine($"ID: {emp.Id} First Name{emp.FirstName} Last Name {emp.LastName} " +
-                    $"Gender {(Gender)emp.Gender} Position {(Position)emp.Position}");
+                Console.WriteLine($"ID: {emp.Id} First Name: {emp.FirstName} Last Name: {emp.LastName} " +
+                    $"Gender: {(Gender)emp.Gender} Position: {(Position)emp.Position}");
             }
 }
     }
