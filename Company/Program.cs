@@ -151,7 +151,7 @@ namespace Company
                     case Operation.FireAnEmployee:
                         {
                             Company employes = MyCollection();
-                            employes.DeleteEmploee();
+                            employes.DeleteEmployee();
                             
                         }
                         break;

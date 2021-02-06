@@ -16,7 +16,7 @@ namespace Company
             Employees.Add(emp);
         }
 
-        public void DeleteEmploee()
+        public void DeleteEmployee()
         {
             Console.WriteLine("Enter Last Name");
             string name = Console.ReadLine();
