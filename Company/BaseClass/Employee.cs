@@ -10,8 +10,9 @@ namespace Company
     {
         Executive = 1,
         Manager,
-        HourlyEmloyee,
-        SalariedEmployee
+        SalariedEmployee,
+        HourlyEmloyee
+        
     }
     enum Gender
     {

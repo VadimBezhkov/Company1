@@ -28,6 +28,23 @@ namespace Company
             Console.ResetColor();
 
         }
+        static void MenuPosition()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Select position!!!");
+            Console.WriteLine("Executive - enter key 1");
+            Console.WriteLine("Manager - enter key 2");
+            Console.WriteLine("Salaried Employee - enter 3");
+            Console.WriteLine("Hourly Employee - enter 4");
+            Console.ResetColor();
+        }
+        public static Gender GenderInfo(string gend)
+        {
+            if (gend == "man")
+                    return Gender.man;
+                else
+                    return Gender.woman;
+        }
         static void Main(string[] args)
         {
         
@@ -73,37 +90,62 @@ namespace Company
 
                             Console.WriteLine("Enter Gander");
                             string gender = Console.ReadLine();
-                            Gender Method(string gend)
-                            {
-                                if (gender == "man")
-                                    return Gender.man;
-                                else
-                                    return Gender.woman;
-                            }
-                            //if(gender=="man")
-                            //{
-                            //    return Gender.man;
-                            //}
-                            //else if (gender == "woman")
-                            //{
-                            //    Gender gender1 = Gender.woman;
-                            //}
-                            //else
-                            //Console.WriteLine("Erorrs enter man and woman");
-                            Method(gender);
-                            Console.WriteLine("Enter Position");
-                            string position = Console.ReadLine();
+                            GenderInfo(gender);
 
-                            if(position == "Executive")
+                            MenuPosition();
+                            Position pos;
+                            Enum.TryParse(Console.ReadLine(), out pos);
+                            switch (pos)
                             {
-                                Console.WriteLine("Enter name Executive");
-                                string executive = Console.ReadLine();
-                                Executive executive1 = new Executive(id, lastName, firstName, Method(gender), Position.Executive);
+                                case Position.Executive:
+                                    {
+                                        Executive executive = new Executive(id, lastName, firstName, GenderInfo(gender),
+                                            Position.Executive);
 
+                                        company.AddEmploee(executive);
+                                        company.Show();
+                                    }
+                                    break;
+                                case Position.Manager:
+                                    {
+                                        Manager manager = new Manager(id, lastName, firstName, GenderInfo(gender), Position.Manager);
+                                        company.AddEmploee(manager);
+                                        company.Show();
+                                    }
+                                    break;
+                                case Position.HourlyEmloyee:
+                                    { 
+                                        HourlyEmloyee hourlyEmp = new HourlyEmloyee(id, lastName, firstName, GenderInfo(gender),
+                                            Position.HourlyEmloyee,0);
+
+                                        company.AddEmploee(hourlyEmp);
+                                        company.Show();
+                                    }
+                                    break;
+                                case Position.SalariedEmployee:
+                                    {
+                                        SalariedEmployee salasried = new SalariedEmployee(id, lastName, firstName, GenderInfo(gender),
+                                            Position.SalariedEmployee);
+
+                                        company.AddEmploee(salasried);
+                                        company.Show();
+                                    }
+                                    break;
+                                default:
+                                    {
+                                        Console.WriteLine("Mistake. Make your choice \n" +
+                               "press any button to continue");
+                                        Console.ReadKey();
+                                    }
+                                    break;
                             }
                         }
                         break;
                     case Operation.FireAnEmployee:
+                        {
+
+
+                        }
                         break;
                     case Operation.ToPromote:
                         break;
@@ -112,9 +154,13 @@ namespace Company
                     case Operation.Show:
                         break;
                     default:
+                        {
+                            Console.WriteLine("Mistake. Make your choice \n" +
+                                   "press any button to continue");
+                            Console.ReadKey();
+                        }
                         break;
                 }
-                break;
             }
             Console.ReadKey();
         }
