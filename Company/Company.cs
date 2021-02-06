@@ -31,7 +31,9 @@ namespace Company
 
                 if (employee != null)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Thinking well ? - Enter key y");
+                    Console.ResetColor();
                     string result = Console.ReadLine();
                     if (result == "y")
                     {
