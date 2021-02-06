@@ -16,9 +16,32 @@ namespace Company
             Employees.Add(emp);
         }
 
-        public void DeleteEmploee(Employee emp)
+        public void DeleteEmploee()
         {
-            Employees.Remove(emp);
+            Console.WriteLine("Enter Last Name");
+            string name = Console.ReadLine();
+            Employee employee = null;
+            foreach (var empl in Employees)
+            {
+                if (empl.LastName == name)
+                {
+                    employee = empl;
+                }
+
+                if (employee != null)
+                {
+                    Employees.Remove(empl);
+                    Console.Clear();
+                    Show();
+                    break;
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Employee not found");
+                    Show();
+                }
+            }
         }
 
         public void PromoteAnEmployee(Employee emp, decimal bonus)

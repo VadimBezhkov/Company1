@@ -20,11 +20,11 @@ namespace Company
        static void Menu()
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine();
             Console.WriteLine("Hire an employee - enter key 1");
             Console.WriteLine("Fire an Employee - enter key 2");
             Console.WriteLine("To Promote - enter 3");
-            Console.WriteLine("Demote - enter 4");
-            Console.WriteLine("Show all workers - утеук 5");
+            Console.WriteLine("Demote - enter key 4");
             Console.ResetColor();
 
         }
@@ -56,13 +56,13 @@ namespace Company
             company.AddEmploee(nm);
             company.AddEmploee(se);
             company.AddEmploee(es);
-
-            company.DemoteEmployee(ex);
             company.Show();
+            company.DemoteEmployee(ex);
             return company;
         }
         static void Chose()
         {
+            Console.Clear();
             Company company1 = MyCollection();
             Console.WriteLine("Enter Id");
             int id;
@@ -74,7 +74,7 @@ namespace Company
             Console.WriteLine("Enter First Name");
             string firstName = Console.ReadLine();
 
-            Console.WriteLine("Enter Gander");
+            Console.WriteLine("Enter Gander - enter key man ant any key woman");
             string gender = Console.ReadLine();
             GenderInfo(gender);
 
@@ -150,15 +150,14 @@ namespace Company
                         break;
                     case Operation.FireAnEmployee:
                         {
-
-
+                            Company employes = MyCollection();
+                            employes.DeleteEmploee();
+                            
                         }
                         break;
                     case Operation.ToPromote:
                         break;
                     case Operation.Demote:
-                        break;
-                    case Operation.Show:
                         break;
                     default:
                         {
