@@ -18,23 +18,32 @@ namespace Company
 
         public void DeleteEmployee()
         {
-            Console.WriteLine("Enter Last Name");
+            Console.WriteLine("Enter First Name");
             string name = Console.ReadLine();
             Employee employee = null;
             foreach (var empl in Employees)
             {
-                if (empl.LastName == name)
+
+                if (empl.FirstName == name)
                 {
                     employee = empl;
                 }
 
                 if (employee != null)
                 {
-                    Employees.Remove(empl);
-                    Console.Clear();
-                    Show();
-                    break;
+                    Console.WriteLine("Thinking well ? - Enter key y");
+                    string result = Console.ReadLine();
+                    if (result == "y")
+                    {
+                        Employees.Remove(empl);
+                        Console.Clear();
+                        Show();
+                        break;
+                    }
+                    else
+                        break;
                 }
+
                 else
                 {
                     Console.Clear();
